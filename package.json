@@ -72,8 +72,10 @@
     "@netlify/plugin-nextjs": "^4.2.7",
     "@types/js-cookie": "^3.0.1",
     "@types/react": "17.0.27",
+    "babel-plugin-jsx-remove-data-test-id": "^3.0.0",
     "cross-env": "^7.0.3",
     "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-next": "11.1.2",
     "eslint-plugin-risxss": "^2.1.0",
     "typescript": "^4.4.3"
