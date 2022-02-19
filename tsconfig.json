@@ -1,7 +1,7 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["src", "e2e", "**/*.config.js", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["e2e", "**/*.config.js", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["**/node_modules/*", "tests/*"]
 }

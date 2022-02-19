@@ -1,0 +1,10 @@
+@layer components {
+  .button {
+    &-main {
+      @apply bg-primary rounded-sm text-white capitalize text-base;
+      @apply py-2 px-4;
+      min-width: 74px;
+      //   min-height: 50px;
+    }
+  }
+}

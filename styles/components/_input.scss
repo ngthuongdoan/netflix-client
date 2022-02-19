@@ -1,0 +1,7 @@
+@layer components {
+  .input__component {
+    &:focus ~ .input__placeholder {
+      @apply top-1 translate-y-0 text-xs;
+    }
+  }
+}
