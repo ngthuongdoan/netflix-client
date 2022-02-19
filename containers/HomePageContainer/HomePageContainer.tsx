@@ -1,4 +1,6 @@
+import Button from 'components/Button/Button';
 import { Icons } from 'components/Icons';
+import Section from 'components/Section/Section';
 import GetStartedForm from './GetStartedForm';
 
 type HomePageContainerProps = {};
@@ -7,33 +9,56 @@ const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
   return (
     <>
       <div className="relative">
-        <div className="absolute inset-0  pb-24 border-b-8 border-[#222]">
-          <div className="absolute z-[-1] inset-0 bg-black opacity-70"></div>
-          <div className="absolute z-[-2] inset-0 bottom-10 overflow-hidden">
-            <img
-              className="object-cover "
-              src="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-              srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
-              alt=""
-            />
-          </div>
-        </div>
-
-        <header className="pt-7 px-14 flex justify-between">
+        <header className="absolute w-full pt-7 px-14 flex justify-between">
           <Icons.Netflix size={134} />
           <div className="flex gap-9">
-            <button className="button-main">Sign In</button>
-            <button className="button-main">Sign In</button>
+            <Button>Sign In</Button>
           </div>
         </header>
 
-        <section className="intro text-center relative">
-          <div className="intro__wrapper">
-            <h1 className="intro__title inline-block font-bold text-6xl m-0 break-words">Unlimited movies, TV shows, and more.</h1>
-            <h2 className="intro__subtitle my-4 mx-auto">Watch anywhere. Cancel anytime.</h2>
+        <Section
+          backdrop={
+            <>
+              <div className="absolute z-[-1] inset-0 bg-gradient-to-b from-[#0f0f0f] to-black  opacity-80"></div>
+              <div className="absolute z-[-2] inset-0 overflow-hidden">
+                <img
+                  className="w-full h-full object-cover "
+                  src="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+                  srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
+                  alt=""
+                />
+              </div>
+            </>
+          }
+          wrapperClasses="text-center relative"
+          backdropClasses="min-h-[600px] py-24"
+        >
+          <div className="py-[200px]">
+            <h1 className="w-[600px] inline-block font-bold text-6xl m-0 break-words">Unlimited movies, TV shows, and more.</h1>
+            <h2 className="text-[26px] my-4 mx-auto">Watch anywhere. Cancel anytime.</h2>
             <GetStartedForm />
           </div>
-        </section>
+        </Section>
+
+        <Section contentClasses="flex items-center justify-center py-[45px] px-[100px]">
+          <div className="flex-grow flex flex-col gap-5 pr-12 mb-20 text-white">
+            <h1 className="text-5xl font-bold">Have an Android Phone? Get our new free plan!</h1>
+            <h2 className="text-2xl">Watch a selection of new movies and TV shows without adding any payment details!</h2>
+            <div>
+              <Button className="h-full text-2xl bg-transparent" icon={<Icons.Arrow size={9} />}>
+                Get the app
+              </Button>
+            </div>
+          </div>
+          <div className="w-full h-full ">
+            <img className="mx-auto w-[500px] object-contain" src="https://assets.nflxext.com/ffe/siteui/acquisition/ab36101/nmhp/vn.jpg" alt="" />
+          </div>
+        </Section>
+
+        <Section wrapperClasses="py-[70px] px-[45px]" contentClasses="flex flex-col items-center justify-center">
+          <h1 className="text-5xl font-bold">Frequently Asked Questions</h1>
+          <GetStartedForm />
+        </Section>
       </div>
     </>
   );

@@ -2,11 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-// Abstract files
-@import 'utilities/all';
-
 // Core files
 @import 'core/all';
+
+// Abstract files
+@import 'utilities/all';
 
 // Components
 @import 'components/all';
