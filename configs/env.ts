@@ -15,6 +15,6 @@ type CurrentEnv = {
 };
 
 export const CURRENT_ENV: CurrentEnv = {
-  env: Environment.Local,
+  env: Environment.Deploy,
   staging: Staging.Dev,
 };
