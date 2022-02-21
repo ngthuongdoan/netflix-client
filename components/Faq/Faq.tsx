@@ -1,7 +1,7 @@
 /* eslint-disable risxss/catch-potential-xss-react */
 import { Icons } from "components/Icons";
 import { useState } from "react";
-import { sanitize } from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 type FaqProps = {
   title: string;
@@ -22,7 +22,7 @@ const Faq: React.VFC<FaqProps> = ({ title, content, icon = <Icons.Plus /> }) => 
         {icon && <span>{icon}</span>}
       </div>
       <div className={showContent ? "faq__content--open" : "faq__content--closed"}>
-        <div className="p-8 bg-[#303030]" dangerouslySetInnerHTML={{ __html: sanitize(content) }}></div>
+        <div className="p-8 bg-[#303030]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}></div>
       </div>
     </div>
   );
