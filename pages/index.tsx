@@ -1,5 +1,12 @@
-import HomePageContainer from 'containers/HomePageContainer/HomePageContainer';
+import IndexPageContainer from "containers/IndexPageContainer/IndexPageContainer";
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import { NextPage } from "next";
 
-export default function Home() {
-  return <HomePageContainer />;
-}
+const Index: NextPage = () => {
+  return (
+    <AuthLayout>
+      <IndexPageContainer />;
+    </AuthLayout>
+  );
+};
+export default Index;
