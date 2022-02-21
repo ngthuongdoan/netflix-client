@@ -1,77 +1,68 @@
 import Button from "components/Button/Button";
-import Faq from "components/Faq/Faq";
-import { Icons } from "components/Icons";
-import Section from "components/Section/Section";
-import { FAQ_LIST } from "constants/faqs";
-import GetStartedForm from "./GetStartedForm";
+import { useEffect, useRef, useState } from "react";
 
 type HomePageContainerProps = {};
 
 const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
+  const [isPlay, setIsPlay] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPlay(true);
+    }, 1500);
+  }, [videoRef]);
+
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       if (isPlay && videoRef && videoRef.current) {
+  //         videoRef.current.pause();
+  //         videoRef.current.currentTime = 0;
+  //         setIsPlay(false);
+  //       }
+  //     }, 20000);
+  //   }, [isPlay, videoRef]);
+
   return (
-    <>
-      <div className="relative">
-        <header className="absolute w-full pt-7 px-4 flex justify-between lg:px-14">
-          <Icons.Netflix size={134} />
-          <div className="flex gap-9">
-            <Button>Sign In</Button>
+    <div>
+      <section className="min-h-screen relative">
+        <div className="absolute inset-0 z-[-3] overflow-hidden">
+          <div className=" z-[-2]">
+            <div className="absolute inset-0 z-0 " style={{ background: "linear-gradient(77deg,rgba(0,0,0,.6) 0,rgba(0,0,0,0) 85%)" }}></div>
+            {isPlay ? (
+              <video ref={videoRef} autoPlay muted controls={false} onPause={() => setIsPlay(false)} className="object-cover w-full">
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/netfl-2a471.appspot.com/o/X2Convert.com%20fate_stay_night_unlimited_blade_works_english_dub_trailer_-1601310300822870143.mp4?alt=media&token=3093fad3-698e-4aa1-9f66-4baf04ffa06f&#t=30,35"
+                  type="video/mp4"
+                ></source>
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <img
+                className="object-cover w-full"
+                src="https://occ-0-58-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfekVXolASpTLszt3zjkEwEDYRDecAJh56p7TeF_7Cs_wow73a0zCIR45Md8P6nYS67ajI1ny9HfvY24zoOcnpvP3zRB.webp?r=c76"
+                alt=""
+              />
+            )}
           </div>
-        </header>
+        </div>
 
-        <Section
-          backdrop={
-            <>
-              <div className="absolute z-[-1] inset-0 bg-gradient-to-b from-[#0f0f0f] to-black  opacity-80"></div>
-              <div className="absolute z-[-2] inset-0 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover "
-                  src="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-                  srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/ed0b5df9-ba9d-4534-bd09-57993daeda56/d8140ec9-331f-4537-9743-62684296d353/VN-en-20220214-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
-                  alt=""
-                />
-              </div>
-            </>
-          }
-          wrapperClasses="text-center relative md:px-[70px]"
-          backdropClasses="min-h-[600px] py-24"
-        >
-          <div className="py-[200px]">
-            <h1 className="max-w-[640px] w-full inline-block font-bold m-0 break-words lg:text-6xl md:text-5xl sm:text-base">
-              Unlimited movies, TV shows, and more.
-            </h1>
-            <h2 className="text-lg lg:text-[26px] my-4 mx-auto">Watch anywhere. Cancel anytime.</h2>
-            <GetStartedForm />
+        <div className="absolute w-[36%] top-[25%] left-[4%] bottom-[35%] z-10">
+          <div className="min-h-[13.2vw] mb-[1.2vw]">
+            <img
+              src="https://occ-0-58-395.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABTm8WNLc9uFCRwhy7SIsB34I9Q-W-SSzYycf2vdGhRxxacsdsex29zqZE_0oImAMFKxJBptPVPaplVejTgWkD0yb6TbQeGpOZPnc.webp?r=d25"
+              alt="fate-stay-night"
+            />
           </div>
-        </Section>
-
-        <Section contentClasses="flex items-center justify-center py-[45px] px-[100px] lg:flex-row lg:text-left xs:flex-col xs:text-center xs:p-3">
-          <div className="flex-grow flex flex-col gap-5 mb-20 text-white lg:pr-12 sm:pr-0">
-            <h1 className="text-5xl font-bold">Have an Android Phone? Get our new free plan!</h1>
-            <h2 className="text-2xl">Watch a selection of new movies and TV shows without adding any payment details!</h2>
-            <div className="sm:mx-auto lg:m-0">
-              <Button className="h-full text-2xl bg-transparent" icon={<Icons.Arrow size={9} />}>
-                Get the app
-              </Button>
-            </div>
+          <p className="mb-6 text-white text-[1.4vw]">
+            Được chọn tham gia một cuộc đấu bí mật nhằm đoạt lấy Chén Thánh, hai học sinh trung học Rin và Shirou quyết định liên thủ.
+          </p>
+          <div className="flex gap-3">
+            <Button>Phát</Button>
+            <Button>Thông tin khác</Button>
           </div>
-          <div className="w-full h-full ">
-            <img className="mx-auto w-[500px] object-contain" src="https://assets.nflxext.com/ffe/siteui/acquisition/ab36101/nmhp/vn.jpg" alt="" />
-          </div>
-        </Section>
-
-        <Section wrapperClasses="py-[70px] px-[45px]" contentClasses="flex flex-col items-center justify-center">
-          <h1 className="text-5xl font-bold">Frequently Asked Questions</h1>
-          <ul className="w-full mx-auto flex flex-col gap-2 my-14">
-            {FAQ_LIST.map(({ title, answer }, index) => (
-              <li key={index}>
-                <Faq title={title} content={answer}></Faq>
-              </li>
-            ))}
-          </ul>
-          <GetStartedForm />
-        </Section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
   );
 };
 

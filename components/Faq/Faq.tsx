@@ -16,7 +16,7 @@ const Faq: React.VFC<FaqProps> = ({ title, content, icon = <Icons.Plus /> }) => 
     setShowContent((pre) => !pre);
   }
   return (
-    <div className="w-full max-w-[815px]  text-left mx-auto text-white text-[26px]">
+    <div className="w-full max-w-[815px] text-left mx-auto text-white text-[26px] select-none">
       <div onClick={toggleContent} role="button" className="flex items-center justify-between px-8 py-[21px] mb-[1px] bg-[#303030]">
         <span className="flex-grow">{title}</span>
         {icon && <span>{icon}</span>}
