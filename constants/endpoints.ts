@@ -23,13 +23,5 @@ if (CURRENT_ENV.staging === Staging.Stage) {
 
 export const AUTH_URL = baseURL + '/auth';
 export const BASE_URL = baseURL;
-export const CARD_URL = baseURL + '/card';
 export const DOMAIN = domain;
 export const FULL_DOMAIN = fullDomain;
-export const LANDING_DOMAIN = landingDomain;
-export const MEDIA_URL = mediaUrl;
-export const SUBSCRIPTION_PLAN_URL = baseURL + '/subscription-plan';
-export const SUBSCRIPTION_URL = baseURL + '/subscription';
-export const TRANSACTION_URL = baseURL + '/transaction';
-export const UPLOAD_URL = baseURL + '/media';
-export const EMPLOYEE_URL = baseURL + '/employee';

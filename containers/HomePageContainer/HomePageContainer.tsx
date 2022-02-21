@@ -1,7 +1,9 @@
-import Button from 'components/Button/Button';
-import { Icons } from 'components/Icons';
-import Section from 'components/Section/Section';
-import GetStartedForm from './GetStartedForm';
+import Button from "components/Button/Button";
+import Faq from "components/Faq/Faq";
+import { Icons } from "components/Icons";
+import Section from "components/Section/Section";
+import { FAQ_LIST } from "constants/faqs";
+import GetStartedForm from "./GetStartedForm";
 
 type HomePageContainerProps = {};
 
@@ -57,6 +59,13 @@ const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
 
         <Section wrapperClasses="py-[70px] px-[45px]" contentClasses="flex flex-col items-center justify-center">
           <h1 className="text-5xl font-bold">Frequently Asked Questions</h1>
+          <ul className="w-full mx-auto flex flex-col gap-2 my-14">
+            {FAQ_LIST.map(({ title, answer }, index) => (
+              <li key={index}>
+                <Faq title={title} content={answer}></Faq>
+              </li>
+            ))}
+          </ul>
           <GetStartedForm />
         </Section>
       </div>
