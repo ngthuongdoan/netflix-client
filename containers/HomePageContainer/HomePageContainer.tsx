@@ -11,7 +11,7 @@ const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
   return (
     <>
       <div className="relative">
-        <header className="absolute w-full pt-7 px-14 flex justify-between">
+        <header className="absolute w-full pt-7 px-4 flex justify-between lg:px-14">
           <Icons.Netflix size={134} />
           <div className="flex gap-9">
             <Button>Sign In</Button>
@@ -32,21 +32,23 @@ const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
               </div>
             </>
           }
-          wrapperClasses="text-center relative"
+          wrapperClasses="text-center relative md:px-[70px]"
           backdropClasses="min-h-[600px] py-24"
         >
           <div className="py-[200px]">
-            <h1 className="w-[600px] inline-block font-bold text-6xl m-0 break-words">Unlimited movies, TV shows, and more.</h1>
-            <h2 className="text-[26px] my-4 mx-auto">Watch anywhere. Cancel anytime.</h2>
+            <h1 className="max-w-[640px] w-full inline-block font-bold m-0 break-words lg:text-6xl md:text-5xl sm:text-base">
+              Unlimited movies, TV shows, and more.
+            </h1>
+            <h2 className="text-lg lg:text-[26px] my-4 mx-auto">Watch anywhere. Cancel anytime.</h2>
             <GetStartedForm />
           </div>
         </Section>
 
-        <Section contentClasses="flex items-center justify-center py-[45px] px-[100px]">
-          <div className="flex-grow flex flex-col gap-5 pr-12 mb-20 text-white">
+        <Section contentClasses="flex items-center justify-center py-[45px] px-[100px] lg:flex-row lg:text-left xs:flex-col xs:text-center xs:p-3">
+          <div className="flex-grow flex flex-col gap-5 mb-20 text-white lg:pr-12 sm:pr-0">
             <h1 className="text-5xl font-bold">Have an Android Phone? Get our new free plan!</h1>
             <h2 className="text-2xl">Watch a selection of new movies and TV shows without adding any payment details!</h2>
-            <div>
+            <div className="sm:mx-auto lg:m-0">
               <Button className="h-full text-2xl bg-transparent" icon={<Icons.Arrow size={9} />}>
                 Get the app
               </Button>
