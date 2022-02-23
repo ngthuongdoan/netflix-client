@@ -6,5 +6,37 @@
       min-width: 74px;
       //   min-height: 50px;
     }
+
+    &-white {
+      @apply bg-white rounded-sm text-base;
+      @apply flex items-center justify-center gap-2 py-3 px-5;
+      @apply transition-all duration-200 ease-in;
+      & > * {
+        color: black !important;
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      //   min-height: 50px;
+    }
+
+    &-transparent {
+      @apply rounded-sm text-white text-base;
+      @apply flex items-center justify-center gap-2 py-3 px-5;
+      @apply transition-all duration-200 ease-in;
+      background-color: rgba(109, 109, 110, 0.7);
+      &:hover {
+        background-color: rgba(109, 109, 110, 0.4);
+      }
+      //   min-height: 50px;
+    }
+
+    &-icon {
+      @apply rounded-full border border-white p-1.5 bg-transparent;
+      @apply transition-all duration-200 ease-in;
+      &:hover {
+        background-color: rgba(109, 109, 110, 0.4);
+      }
+    }
   }
 }

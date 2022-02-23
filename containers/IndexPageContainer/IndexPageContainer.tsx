@@ -1,4 +1,4 @@
-import Button from "components/Button/Button";
+import Button from "components/Button";
 import Faq from "components/Faq/Faq";
 import Footer from "components/Footer/Footer";
 import { Icons } from "components/Icons";
@@ -42,7 +42,7 @@ const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
           <h1 className="text-5xl font-bold">Have an Android Phone? Get our new free plan!</h1>
           <h2 className="text-2xl">Watch a selection of new movies and TV shows without adding any payment details!</h2>
           <div className="sm:mx-auto lg:m-0">
-            <Button className="h-full text-2xl bg-transparent" icon={<Icons.Arrow size={9} />}>
+            <Button className="h-full text-2xl bg-transparent" icon={<Icons.Arrow size={9} />} iconPosition="end">
               Get the app
             </Button>
           </div>
