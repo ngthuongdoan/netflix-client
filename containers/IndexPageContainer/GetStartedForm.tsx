@@ -1,4 +1,4 @@
-import Button from "components/Button/Button";
+import Button from "components/Button";
 import { Icons } from "components/Icons";
 import Input from "components/Input/Input";
 
@@ -12,7 +12,7 @@ const GetStartedForm: React.VFC<GetStartedFormProps> = (props) => {
       </p>
       <div className="flex items-center justify-center w-full h-[70px] flex-col sm:flex-row">
         <Input />
-        <Button className="h-full lg:text-2xl px-5 text-lg" icon={<Icons.Arrow size={9} />}>
+        <Button className="button-main h-full lg:text-2xl px-5 text-lg" icon={<Icons.Arrow size={9} />} iconPosition="end">
           Get Started
         </Button>
       </div>
