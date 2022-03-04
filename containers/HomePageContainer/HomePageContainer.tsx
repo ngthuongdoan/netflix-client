@@ -1,19 +1,40 @@
-import { VideoState } from "type/Video";
-import Button from "components/Button";
-import { IconProps, Icons } from "components/Icons";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { fadeInVideo } from "utils/fadeInVideo";
 import HomeIntro from "./HomeIntro/HomeIntro";
+import MovieCard from "components/MovieCard/MovieCard";
+import Slider, { Settings as SlickSetting } from "react-slick";
 
 type HomePageContainerProps = {};
+const settings: SlickSetting = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  initialSlide: 0,
+  className: "w-full",
+  arrows: false,
+};
 
 const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
   return (
     <div>
-      <HomeIntro />
-      <section>
-        <h1>asdasdas</h1>
-      </section>
+      <div>
+        <HomeIntro />
+        <div className="px-10">
+          <Slider {...settings}>
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+          </Slider>
+        </div>
+      </div>
     </div>
   );
 };
