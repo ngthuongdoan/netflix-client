@@ -9,7 +9,7 @@ const settings: SlickSetting = {
   slidesToShow: 6,
   slidesToScroll: 6,
   initialSlide: 0,
-  className: "w-full",
+  className: "custom-slider",
   arrows: false,
 };
 
