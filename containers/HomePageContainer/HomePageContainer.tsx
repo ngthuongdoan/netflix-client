@@ -1,19 +1,15 @@
-import { VideoState } from "type/Video";
-import Button from "components/Button";
-import { IconProps, Icons } from "components/Icons";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { fadeInVideo } from "utils/fadeInVideo";
 import HomeIntro from "./HomeIntro/HomeIntro";
+import SliderSection from "components/SliderSection/SliderSection";
 
 type HomePageContainerProps = {};
 
 const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
   return (
     <div>
-      <HomeIntro />
-      <section>
-        <h1>asdasdas</h1>
-      </section>
+      <div>
+        <HomeIntro />
+        <SliderSection className="-mt-12" slides={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 2, 2, 2, 2, 2]} title="My List"></SliderSection>
+      </div>
     </div>
   );
 };

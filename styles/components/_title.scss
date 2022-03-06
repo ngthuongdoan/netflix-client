@@ -1,0 +1,16 @@
+@layer components {
+  .title {
+    @apply relative text-xl text-white font-bold cursor-default my-2;
+    &__showmore {
+      @apply absolute bottom-0 ml-4 overflow-hidden w-0 text-sm font-normal whitespace-nowrap transition-all duration-500 ease-in-out;
+      & > svg {
+        @apply inline;
+      }
+    }
+    &:hover {
+      .title__showmore {
+        @apply w-full;
+      }
+    }
+  }
+}
