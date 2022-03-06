@@ -46,9 +46,9 @@ const HomeIntro: React.VFC<HomeIntroProps> = (props) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen">
-      <section className="h-full absolute inset-0 z-[-3] overflow-hidden">
-        <div className=" z-[-2]">
+    <section className="relative  aspect-video">
+      <section className="h-full w-full absolute inset-0 z-[-3]">
+        <div className="z-[-2] w-full">
           <div className="absolute inset-0 z-0 " style={{ background: "linear-gradient(77deg,rgba(0,0,0,.6) 0,rgba(0,0,0,0) 85%)" }}></div>
           <video
             id="background-video"
@@ -62,7 +62,7 @@ const HomeIntro: React.VFC<HomeIntroProps> = (props) => {
             onCanPlayThrough={(event) => {
               fadeInVideo(event.target as HTMLVideoElement, 100);
             }}
-            className={`object-cover w-full ani ${!isPlay && "hidden"}`}
+            className={`object-cover w-full ${!isPlay && "hidden"}`}
           >
             <source
               src="https://firebasestorage.googleapis.com/v0/b/netfl-2a471.appspot.com/o/X2Convert.com%20fate_stay_night_unlimited_blade_works_english_dub_trailer_-1601310300822870143.mp4?alt=media&token=3093fad3-698e-4aa1-9f66-4baf04ffa06f&#t=30,35"
@@ -79,13 +79,13 @@ const HomeIntro: React.VFC<HomeIntroProps> = (props) => {
       </section>
 
       <div className="absolute w-[36%] top-[25%] left-[4%] bottom-[35%] z-10">
-        <div className="min-h-[13.2vw] mb-[1.2vw]">
+        <div className="max-h-screen ">
           <img
             src="https://occ-0-58-395.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABTm8WNLc9uFCRwhy7SIsB34I9Q-W-SSzYycf2vdGhRxxacsdsex29zqZE_0oImAMFKxJBptPVPaplVejTgWkD0yb6TbQeGpOZPnc.webp?r=d25"
             alt="fate-stay-night"
           />
         </div>
-        <p className="mb-6 text-white text-[1.4vw]">
+        <p className="mb-6 text-white text-lg">
           Được chọn tham gia một cuộc đấu bí mật nhằm đoạt lấy Chén Thánh, hai học sinh trung học Rin và Shirou quyết định liên thủ.
         </p>
         <div className="flex gap-3">
@@ -98,7 +98,7 @@ const HomeIntro: React.VFC<HomeIntroProps> = (props) => {
         </div>
       </div>
 
-      <div className="absolute right-0  top-[70%] bottom-[55%] flex items-center gap-4">
+      <div className="absolute right-0 top-[70%] bottom-[55%] flex items-center gap-4">
         {videoState === VideoState.UNMUTE && (
           <Button className="button-icon w-7 h-7" onClick={mute}>
             <Icons.Unmute className="w-full h-full" />

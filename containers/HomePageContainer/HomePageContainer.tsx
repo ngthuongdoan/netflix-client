@@ -1,39 +1,14 @@
 import HomeIntro from "./HomeIntro/HomeIntro";
-import MovieCard from "components/MovieCard/MovieCard";
-import Slider, { Settings as SlickSetting } from "react-slick";
+import SliderSection from "components/SliderSection/SliderSection";
 
 type HomePageContainerProps = {};
-const settings: SlickSetting = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 6,
-  slidesToScroll: 6,
-  initialSlide: 0,
-  className: "custom-slider",
-  arrows: false,
-};
 
 const HomePageContainer: React.VFC<HomePageContainerProps> = (props) => {
   return (
     <div>
       <div>
         <HomeIntro />
-        <div className="px-10">
-          <Slider {...settings}>
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-          </Slider>
-        </div>
+        <SliderSection className="-mt-12" slides={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 2, 2, 2, 2, 2]} title="My List"></SliderSection>
       </div>
     </div>
   );
