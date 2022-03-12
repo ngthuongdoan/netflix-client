@@ -1,0 +1,18 @@
+// @layer components {
+//   .movie-card {
+//     &--normal {
+//       @apply block;
+//     }
+//     &--hover {
+//       @apply hidden scale-125;
+//     }
+//     &:hover {
+//       .movie-card--normal {
+//         @apply hidden;
+//       }
+//       .movie-card--hover {
+//         @apply block;
+//       }
+//     }
+//   }
+// }

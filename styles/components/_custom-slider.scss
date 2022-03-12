@@ -1,5 +1,11 @@
 .custom-slider {
   .slick-slide {
-    @apply pr-2 rounded-sm overflow-hidden;
+    @apply pr-2 rounded-sm overflow-visible;
+  }
+  .slick-track {
+    overflow-y: overlay !important;
+  }
+  .slick-list {
+    @apply overflow-x-hidden;
   }
 }

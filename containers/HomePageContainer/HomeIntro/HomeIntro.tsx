@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import { Icons } from "components/Icons";
 import { useEffect, useState } from "react";
-import { VideoState } from "type/Video";
+import { VideoState } from "types/Video";
 import { fadeInVideo } from "utils/fadeInVideo";
 
 type HomeIntroProps = {};
