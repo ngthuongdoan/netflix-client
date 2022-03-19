@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, ButtonHTMLAttributes } from "react";
+import ButtonSlide from "./ButtonSlide";
 
 export type ButtonProps = {
   icon?: React.ReactNode;
@@ -7,7 +8,9 @@ export type ButtonProps = {
   className?: string;
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-type StaticProps = {};
+type StaticProps = {
+  Slide: typeof ButtonSlide;
+};
 
 const Button: React.VFC<ButtonProps> & StaticProps = ({ children, icon, className = "button-main", loading = false, iconPosition, ...rest }) => {
   return (
@@ -45,5 +48,5 @@ const Button: React.VFC<ButtonProps> & StaticProps = ({ children, icon, classNam
 };
 
 Button.displayName = "Button";
-
+Button.Slide = ButtonSlide;
 export default Button;
