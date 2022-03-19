@@ -1,11 +1,4 @@
 import "styles/index.scss";
-import "components/NetflixSlider/Content.scss";
-import "components/NetflixSlider/Item.scss";
-import "components/NetflixSlider/Mark.scss";
-import "components/NetflixSlider/ShowDetailsButton.scss";
-import "components/NetflixSlider/SlideButton.scss";
-import "components/NetflixSlider/Slider.scss";
-import "components/NetflixSlider/SliderWrapper.scss";
 import "configs/axios";
 import Cookie from "js-cookie";
 import store from "store";

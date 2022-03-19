@@ -12,6 +12,7 @@ import Plus from "./Plus";
 import Reload from "./Reload";
 import Twitter from "./Twitter";
 import Unmute from "./Unmute";
+import SlideArrow from "./SlideArrow";
 import Youtube from "./Youtube";
 
 export type IconProps = {
@@ -28,6 +29,7 @@ export const Icons = {
   Info,
   Instagram,
   Magnify,
+  SlideArrow,
   Muted,
   Netflix,
   Play,

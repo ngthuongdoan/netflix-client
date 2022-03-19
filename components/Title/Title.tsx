@@ -1,10 +1,12 @@
 import { Icons } from "components/Icons";
 
-type TitleProps = {};
+type TitleProps = {
+  className?: string;
+};
 
-const Title: React.FC<TitleProps> = ({ children }) => {
+const Title: React.FC<TitleProps> = ({ children, className = "" }) => {
   return (
-    <h1 className="title">
+    <h1 className={`title ${className}`}>
       {children}{" "}
       <span className="title__showmore">
         Show more <Icons.Arrow />

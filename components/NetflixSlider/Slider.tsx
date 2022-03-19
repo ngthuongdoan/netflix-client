@@ -1,49 +1,36 @@
 import React, { useState } from "react";
-import SliderContext from "./context";
-import Content from "./Content";
-import SliderWrapper from "./SliderWrapper";
-import useSliding from "./useSliding";
-import useSizeElement from "./useSizeElement";
+import useSliding from "../../hooks/useSliding";
+import useSizeElement from "hooks/useSizeElement";
 import { Movie } from "types/Movie";
-import SlideButton from "./SlideButton";
+import Button from "components/Button";
 
 type SliderProps = {
   activeSlide?: Movie;
+  currentSlide: Movie | null;
+  width: number;
 };
 
-const Slider: React.FC<SliderProps> = ({ children, activeSlide = null }) => {
-  const [currentSlide, setCurrentSlide] = useState<Movie | null>(activeSlide);
-  const { width, elementRef } = useSizeElement();
+const Slider: React.FC<SliderProps> = ({ children, currentSlide, width }) => {
   const { handlePrev, handleNext, slideProps, containerRef, hasNext, hasPrev } = useSliding(width, React.Children.count(children));
 
-  const handleSelect = (movie: Movie) => {
-    setCurrentSlide(movie);
-  };
+  //   const handleSelect = (movie: Movie) => {
+  //     setCurrentSlide(movie);
+  //   };
 
-  const handleClose = () => {
-    setCurrentSlide(null);
-  };
-
-  const contextValue = {
-    onSelectSlide: handleSelect,
-    onCloseSlide: handleClose,
-    elementRef,
-    currentSlide,
-  };
+  //   const handleClose = () => {
+  //     setCurrentSlide(null);
+  //   };
 
   return (
-    <SliderContext.Provider value={contextValue}>
-      <SliderWrapper>
-        <div className={`slider ${currentSlide !== null && "slider--open"}`}>
-          <div ref={containerRef} className="slider__container" {...slideProps}>
-            {children}
-          </div>
+    <div className="slider-wrapper">
+      <div className={`slider ${currentSlide !== null ? "slider--open" : ""}`}>
+        <div ref={containerRef} className="slider__container" {...slideProps}>
+          {children}
         </div>
-        {hasPrev && <SlideButton onClick={handlePrev} type="prev" />}
-        {hasNext && <SlideButton onClick={handleNext} type="next" />}
-      </SliderWrapper>
-      {currentSlide && <Content movie={currentSlide} onClose={handleClose} />}
-    </SliderContext.Provider>
+      </div>
+      {hasPrev && <Button.Slide onClick={handlePrev} type="prev" />}
+      {hasNext && <Button.Slide onClick={handleNext} type="next" />}
+    </div>
   );
 };
 
